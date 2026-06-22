@@ -337,7 +337,7 @@ The tradeoff is speed and low fees in exchange for weaker buyer protections. The
 
 ## Try the demo
 
-Still struggling to see how quote, verify, and settle connect? Walk through the live demo: [x402 Demo](https://dheeraj-acp-demo.netlify.app/).
+Still struggling to see how quote, verify, and settle connect? Walk through the live demo: [x402 Demo](https://dheeraj-agentic-communication-demo.netlify.app/).
 
 The early steps show **ACP**: handshake, session, intent, and offer between the buyer-side agent and seller-side agent. When the **payment** step begins, you are watching **x402** in action. Step through it once, then come back to this post.
 

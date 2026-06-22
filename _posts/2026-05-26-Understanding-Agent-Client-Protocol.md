@@ -703,7 +703,7 @@ Spec: [Prompt turn](https://agentclientprotocol.com/protocol/prompt-turn.md)
 
 ## Try the demo
 
-Still struggling to see how the phases connect? Walk through a live, step-by-step visualization: [Agentic Commerce Protocol — Phase 1 Demo](https://dheeraj-acp-demo.netlify.app/).
+Still struggling to see how the phases connect? Walk through a live, step-by-step visualization: [Agentic Commerce Protocol — Phase 1 Demo](https://dheeraj-agentic-communication-demo.netlify.app/).
 
 The demo runs handshake, session, intent, offer, and payment between a buyer-side agent and a seller-side agent. Step through it once, then come back to this post.
 

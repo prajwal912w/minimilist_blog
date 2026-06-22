@@ -300,6 +300,27 @@ article figure img {
   margin: 0 auto;
 }
 
+.post-content figure.post-figure-sm {
+  max-width: 340px;
+  margin: 0.75rem auto 1.25rem;
+  text-align: center;
+}
+
+.post-content figure.post-figure-sm img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e1e4e8;
+}
+
+.post-content figure.post-figure-sm figcaption {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 6px;
+  padding: 0 0.5rem;
+}
+
 .post-content figure {
   width: 100%;
   margin: 0 0 1.5rem;
@@ -573,16 +594,28 @@ article figure img {
   }
 
   /* Let diagrams use the full screen width on phones */
-  .post-content figure {
+  .post-content figure:not(.post-figure-sm) {
     margin-left: -14px;
     margin-right: -14px;
     width: calc(100% + 28px);
   }
 
-  .post-content figure img {
+  .post-content figure:not(.post-figure-sm) img {
     width: 100% !important;
     max-width: 100% !important;
     border-radius: 0 !important;
+  }
+
+  .post-content figure.post-figure-sm {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: min(100%, 300px);
+  }
+
+  .post-content figure.post-figure-sm img {
+    border-radius: 8px !important;
+    max-width: 100% !important;
   }
 
   .post-content figure figcaption {

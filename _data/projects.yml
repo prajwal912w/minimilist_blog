@@ -18,7 +18,7 @@ sections:
         date: Ongoing · 2026
         description: A Nike-themed buyer–seller demo where two AI agents negotiate offers over ACP, settle with x402 USDC or Stripe, and verify seller identity on-chain via ERC-8004 — a seven-day public build from handshake to real payment.
         github: https://github.com/dhru7777/ACP-demo
-        website: https://dheeraj-acp-demo.netlify.app/
+        website: https://dheeraj-agentic-communication-demo.netlify.app/
 
   - name: Completed Projects
     items:
