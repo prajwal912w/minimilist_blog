@@ -12,6 +12,19 @@ Browse by category: [All Talks](/talks/) | [Crypto](/talks/crypto/) | [Toastmast
 
 <div class="talk-entry">
     <div class="talk-content">
+        <h3 class="talk-title">Hosting Chainlink at NYU Blockchain Lab</h3>
+        <div class="talk-date">March 2026</div>
+        <p class="talk-description">
+            Hosted Roman Tirone from Chainlink Labs at the NYU Blockchain Lab for a walkthrough of the Build Program, how Chainlink bridges TradFi and DeFi, and how its infrastructure is helping set industry standards for on-chain applications. Thanks to Bharath Silagani and Louis Nguyen from Chainlink, and to Yiheng Zhu and Yuyao Wang from the NYU Blockchain Lab team for making the event possible.
+        </p>
+    </div>
+    <div class="talk-image-container">
+        <img src="/assets/images/talks/chainlink.jpg" alt="Hosting Chainlink at NYU Blockchain Lab" class="talk-image">
+    </div>
+</div>
+
+<div class="talk-entry">
+    <div class="talk-content">
         <h3 class="talk-title">Liquid Staking Protocol at NYU STERN Blockchain Lab</h3>
         <div class="talk-date">January 2025</div>
         <p class="talk-description">
@@ -79,4 +92,15 @@ Browse by category: [All Talks](/talks/) | [Crypto](/talks/crypto/) | [Toastmast
 
 ### Other
 
-<p>More talks coming soon.</p>
+<div class="talk-entry">
+    <div class="talk-content">
+        <h3 class="talk-title">Campfire × Replit × J.P. Morgan Finance Hack Lab — 1st Hackathon Win</h3>
+        <div class="talk-date">2026</div>
+        <p class="talk-description">
+            First hackathon win after 13 attempts in the city, in the <em>Innovative Theme &amp; Solution</em> category. Built an agent that, when a user searches for something to buy, surfaces sponsored ads in a way that shares value back with the user—Campfire's software handling the accounting. The idea grew out of my post on how AI agents will reshape advertising.<a href="https://dheeraj-work.netlify.app/2025/12/15/Google-Capturing-Attention-Is-All-You-Need"> Read the blog</a>. Huge thanks to Lauren Elizabeth Quiring, Simar Kalkat, Chris Cheasty, Isabella Garbacz, Alina Libowitz Ehrlich &amp; team for putting it together and giving me a stage to present.
+        </p>
+    </div>
+    <div class="talk-image-container">
+        <img src="/assets/images/talks/campfire-hackathon.jpg" alt="Presenting at Campfire x Replit x J.P. Morgan Finance Hack Lab" class="talk-image">
+    </div>
+</div>

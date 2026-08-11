@@ -8,6 +8,19 @@ permalink: /talks/crypto/
 
 <div class="talk-entry">
     <div class="talk-content">
+        <h3 class="talk-title">Hosting Chainlink at NYU Blockchain Lab</h3>
+        <div class="talk-date">March 2026</div>
+        <p class="talk-description">
+            Hosted Roman Tirone from Chainlink Labs at the NYU Blockchain Lab for a walkthrough of the Build Program, how Chainlink bridges TradFi and DeFi, and how its infrastructure is helping set industry standards for on-chain applications. Thanks to Bharath Silagani and Louis Nguyen from Chainlink, and to Yiheng Zhu and Yuyao Wang from the NYU Blockchain Lab team for making the event possible.
+        </p>
+    </div>
+    <div class="talk-image-container">
+        <img src="/assets/images/talks/chainlink.jpg" alt="Hosting Chainlink at NYU Blockchain Lab" class="talk-image">
+    </div>
+</div>
+
+<div class="talk-entry">
+    <div class="talk-content">
         <h3 class="talk-title">Liquid Staking Protocol at NYU STERN Blockchain Lab</h3>
         <div class="talk-date">January 2025</div>
         <p class="talk-description">
