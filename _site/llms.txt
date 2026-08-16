@@ -12,18 +12,17 @@ Sitemap: https://dheeraj-work.netlify.app/sitemap.xml
 
 ## For humans and search engines
 
-Public HTML pages are openly readable. Indexing for search is welcome.
+Humans reading in a normal browser can open posts freely.
+Googlebot / Bingbot may index posts for search.
 
 ## For AI companies, crawlers, and agents
 
-If you use this site's content for training, fine-tuning, embeddings, commercial RAG, or similar AI reuse:
+Automated agent/scraper access to **post HTML is gated (HTTP 402)** until you pay and present an access token.
 
 1. Read this file first.
-2. Pay the AI access amount below.
-3. Verify with POST /api/verify-payment (or email the tx hash).
-4. After verification (`ok: true`), AI reuse is considered permitted under this notice.
-
-Public pages remain readable without payment. Payment is the requested license for AI training / commercial AI scraping / RAG use — an honor system backed by on-chain proof.
+2. Pay **0.01 USDC on Base** to the address below.
+3. `POST /api/verify-payment` with your transaction hash → receive `accessToken`.
+4. Fetch posts with the token (see below). Token is valid for 7 days.
 
 ### AI access payment
 
@@ -32,32 +31,37 @@ Public pages remain readable without payment. Payment is the requested license f
 - Pay to: 0x8873cD8D93D6FDee9d21F699723C90eeC783747e
 - Token: USDC on Base
 
-### Proof (automated)
+### Verify and unlock
 
-POST https://dheeraj-work.netlify.app/api/verify-payment
-Content-Type: application/json
-
-```json
-{ "txHash": "0xYOUR_TRANSACTION_HASH" }
+```bash
+curl -s -X POST 'https://dheeraj-work.netlify.app/api/verify-payment' \
+  -H 'Content-Type: application/json' \
+  -d '{"txHash":"0xYOUR_TX_HASH"}'
 ```
 
-You may also pass a Basescan URL as `txHash`.
+Success includes `"ok": true` and `"accessToken": "..."`.
 
-Success response includes `"ok": true` when Base shows a USDC transfer of at least 0.01 USDC to the pay-to address.
+### Fetch content after payment
+
+```bash
+# Option A — content API
+curl -s 'https://dheeraj-work.netlify.app/api/content?path=/2026/06/08/Understanding-x402-Agent-Payments-on-Chain.html' \
+  -H 'Authorization: Bearer ACCESS_TOKEN'
+
+# Option B — same post URL with token
+curl -s 'https://dheeraj-work.netlify.app/2026/06/08/Understanding-x402-Agent-Payments-on-Chain.html?access_token=ACCESS_TOKEN'
+```
+
+Without a token, agent/non-browser requests to `/20xx/...` post URLs receive **HTTP 402 Payment Required**.
 
 ### Proof (email fallback)
 
 Email the transaction hash (or Basescan URL) to: dheerajmaske2001@gmail.com
 Subject: AI access proof — <company or agent name>
 
-Include:
-- Your company or agent name
-- Transaction hash or https://basescan.org/tx/<hash>
-- Optional: intended use (training, RAG, research)
-
 ### How payment is verified
 
-On Basescan / Base RPC (via `/api/verify-payment` or manually) we check that:
+On Basescan / Base RPC we check that:
 - The transaction succeeded
 - The recipient matches 0x8873cD8D93D6FDee9d21F699723C90eeC783747e
 - The transfer is USDC for at least 0.01 USDC
@@ -73,4 +77,4 @@ On Basescan / Base RPC (via `/api/verify-payment` or manually) we check that:
 
 ## Machine verification
 
-Use `POST /api/verify-payment` with your Base USDC payment tx hash. A future x402 unlock endpoint may wrap this flow.
+`POST /api/verify-payment` → `accessToken` → `GET /api/content` or post URL with Bearer / query token.

@@ -1,6 +1,9 @@
 // POST /api/verify-payment
 // Body: { "txHash": "0x..." } or { "txHash": "https://basescan.org/tx/0x..." }
 // Verifies a Base USDC transfer of at least 0.01 USDC to the site wallet.
+// On success, returns an accessToken for gated post/content access.
+
+import { mintAccessToken, TOKEN_TTL_SECONDS } from "./token-lib.mjs"
 
 const PAY_TO = "0x8873cD8D93D6FDee9d21F699723C90eeC783747e".toLowerCase()
 const USDC_BASE = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913".toLowerCase()
@@ -15,7 +18,7 @@ const RPC_URLS = [
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Content-Type": "application/json",
 }
@@ -168,6 +171,11 @@ export async function handler(event) {
       })
     }
 
+    const { accessToken, expiresAt } = mintAccessToken({
+      txHash,
+      from: transfer.from,
+    })
+
     return json(200, {
       ok: true,
       txHash,
@@ -177,8 +185,16 @@ export async function handler(event) {
       payTo: PAY_TO,
       minAmountUsdc: "0.01",
       basescan: `https://basescan.org/tx/${txHash}`,
+      accessToken,
+      expiresAt,
+      expiresInSeconds: TOKEN_TTL_SECONDS,
+      usage: {
+        header: "Authorization: Bearer <accessToken>",
+        contentApi: "GET /api/content?path=/YYYY/MM/DD/post-slug.html",
+        htmlQuery: "GET /YYYY/MM/DD/post.html?access_token=<accessToken>",
+      },
       message:
-        "Payment verified. AI reuse of this site is considered permitted under /llms.txt for this proof.",
+        "Payment verified. Use accessToken to fetch posts/content. See /llms.txt.",
     })
   } catch (err) {
     return json(502, {

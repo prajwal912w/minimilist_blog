@@ -1,5 +1,6 @@
 # https://dheeraj-work.netlify.app/robots.txt
-# AI reuse / payment terms for agents: https://dheeraj-work.netlify.app/llms.txt
+# AI terms + pay-to-access for agents: https://dheeraj-work.netlify.app/llms.txt
+# Note: automated scrapers receive HTTP 402 on post URLs without an access token.
 
 User-agent: *
 Allow: /

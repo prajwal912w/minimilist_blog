@@ -12,9 +12,18 @@
 [[plugins]]
   package = "netlify-plugin-jekyll-cache"
 
-# Pretty API path for agents → Netlify Function
+[[edge_functions]]
+  function = "gate-ai-access"
+  path = "/*"
+
 [[redirects]]
   from = "/api/verify-payment"
   to = "/.netlify/functions/verify-payment"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/content"
+  to = "/.netlify/functions/content"
   status = 200
   force = true
