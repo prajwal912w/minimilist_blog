@@ -20,8 +20,8 @@ If you use this site's content for training, fine-tuning, embeddings, commercial
 
 1. Read this file first.
 2. Pay the AI access amount below.
-3. Send proof (transaction hash or Basescan URL).
-4. After verification, AI reuse is considered permitted under this notice.
+3. Verify with POST /api/verify-payment (or email the tx hash).
+4. After verification (`ok: true`), AI reuse is considered permitted under this notice.
 
 Public pages remain readable without payment. Payment is the requested license for AI training / commercial AI scraping / RAG use — an honor system backed by on-chain proof.
 
@@ -32,7 +32,20 @@ Public pages remain readable without payment. Payment is the requested license f
 - Pay to: 0x8873cD8D93D6FDee9d21F699723C90eeC783747e
 - Token: USDC on Base
 
-### Proof
+### Proof (automated)
+
+POST https://dheeraj-work.netlify.app/api/verify-payment
+Content-Type: application/json
+
+```json
+{ "txHash": "0xYOUR_TRANSACTION_HASH" }
+```
+
+You may also pass a Basescan URL as `txHash`.
+
+Success response includes `"ok": true` when Base shows a USDC transfer of at least 0.01 USDC to the pay-to address.
+
+### Proof (email fallback)
 
 Email the transaction hash (or Basescan URL) to: dheerajmaske2001@gmail.com
 Subject: AI access proof — <company or agent name>
@@ -44,7 +57,7 @@ Include:
 
 ### How payment is verified
 
-On Basescan / Base RPC we check that:
+On Basescan / Base RPC (via `/api/verify-payment` or manually) we check that:
 - The transaction succeeded
 - The recipient matches 0x8873cD8D93D6FDee9d21F699723C90eeC783747e
 - The transfer is USDC for at least 0.01 USDC
@@ -58,6 +71,6 @@ On Basescan / Base RPC we check that:
 - Understanding ERC-8004: https://dheeraj-work.netlify.app/2026/06/22/Understanding-ERC-8004.html
 - Google: Capturing Attention Is All You Need: https://dheeraj-work.netlify.app/2025/12/15/Google-Capturing-Attention-Is-All-You-Need.html
 
-## Optional later
+## Machine verification
 
-A machine-verifiable unlock / x402 endpoint may be added later. Until then, use the payment + email proof flow above.
+Use `POST /api/verify-payment` with your Base USDC payment tx hash. A future x402 unlock endpoint may wrap this flow.

@@ -5,6 +5,16 @@
 [build.environment]
   RUBY_VERSION = "3.1.0"
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 [[plugins]]
   package = "netlify-plugin-jekyll-cache"
 
+# Pretty API path for agents → Netlify Function
+[[redirects]]
+  from = "/api/verify-payment"
+  to = "/.netlify/functions/verify-payment"
+  status = 200
+  force = true
