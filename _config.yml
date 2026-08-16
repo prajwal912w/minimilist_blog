@@ -6,9 +6,8 @@ email: "dheerajmaske2001@gmail.com"
 # GA4 Measurement ID (https://analytics.google.com → Admin → Data streams)
 google_analytics: "G-KZ3YWGZWWP"
 
-#baseurl: "/minimilist_blog" # Repository name
-#url: "https://dheerajmaske7.github.io" # GitHub Pages URL
-
+baseurl: ""
+url: "https://dheeraj-work.netlify.app"
 
 paginate: 5 # Number of posts per page
 paginate_path: "/page:num" # Pagination URL structure
@@ -21,6 +20,7 @@ social_links:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 
 
 
