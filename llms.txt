@@ -52,7 +52,7 @@ curl -s 'https://dheeraj-work.netlify.app/api/content?path=/2026/06/08/Understan
 curl -s 'https://dheeraj-work.netlify.app/2026/06/08/Understanding-x402-Agent-Payments-on-Chain.html?access_token=ACCESS_TOKEN'
 ```
 
-Without a token, agent/non-browser requests to `/20xx/...` post URLs receive **HTTP 402 Payment Required**.
+Without a token, agent requests to `/20xx/...` post URLs receive **HTTP 402 Payment Required**. Spoofing a Chrome user-agent or `Sec-Fetch-*` headers is not enough; the HTML challenge requires executing JavaScript. Paid agents should use `/api/verify-payment` instead.
 
 ### Proof (email fallback)
 
