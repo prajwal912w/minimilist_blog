@@ -4,7 +4,7 @@ title: "Projects"
 permalink: /projects/
 ---
 
-Explore them on my [GitHub profile](https://github.com/dhru7777).
+Explore them on my [GitHub profile]([https://github.com/prajwal912w]).
 
 ---
 
