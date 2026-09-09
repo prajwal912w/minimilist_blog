@@ -6,18 +6,18 @@ permalink: /about/
 
 
 
-Hello! I'm **Prajwal Shinde**, a graduate student at **Symbiosis Skills & Professional University**, studying **Computer Science - Backend Engineering, AI Engineering and Cybersecurity** 
+Hello! I'm **Prajwal Shinde**, a graduate student at **Symbiosis Skills & Professional University**, studying **Computer Science - Backend Developer, AI Engineer and Cybersecurity** 
 
 I write blogs that simplify complex ideas by answering the fundamentals—why, how, what, when, and where—while covering technology, trends, and real-world applications.
 
 - **Interned At**:  
   - **PhaiAI** Summer'26 (AI Engineering & Related Projects)
-  - **SoloSecurities** Summer'25 (VAPT Testing Intern)
+  - **SoloSecurities** Summer'25 (VAPT Intern)
   - **Yhills Edutech** Summer'24 (Ethical Hacker Trainee)
 
 
 - **Certificates**:
-  - **Chainlink Community Enthusiast** 
+  - **Ch** 
   - **NYC Tech Toastmasters** 
   - **NYU Stern Blockchain Lab**
 
