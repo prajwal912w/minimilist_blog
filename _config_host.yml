@@ -1,10 +1,10 @@
-title: "Dheeraj Maske"
+title: "Prajwal Shinde"
 description: "Minimalist blog with blogs, projects, and more."
-author: "Dheeraj Maske"
-email: "dheerajmaske2001@gmail.com"
+author: "Prajwal Shinde"
+email: "prajwalshindee1@gmail.com"
 
 baseurl: "/minimilist_blog_website/docs" # Add your repository name
-url: "https://dheerajmaske7.github.io" # Your GitHub Pages URL
+url: "https://github.com/prajwal912w" # Your GitHub Pages URL
 
 paginate: 5 # Number of posts per page
 paginate_path: "/page:num" # Pagination URL structure
@@ -13,7 +13,7 @@ destination: ./docs
 
 # Social Links
 social_links:
-  twitter: "https://twitter.com/Dheeraj_maske"
+  twitter: "https://x.com/Prajwalshindee"
 
 # Plugins
 plugins:
