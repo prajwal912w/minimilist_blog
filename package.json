@@ -1,0 +1,25 @@
+{
+  "name": "prajwal-shinde-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test:site": "node scripts/verify-site.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "playwright": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  }
+}

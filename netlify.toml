@@ -1,29 +1,8 @@
 [build]
-  command = "bundle install && bundle exec jekyll build"
-  publish = "_site"
-
-[build.environment]
-  RUBY_VERSION = "3.1.0"
-
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-[[plugins]]
-  package = "netlify-plugin-jekyll-cache"
-
-[[edge_functions]]
-  function = "gate-ai-access"
-  path = "/*"
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
-  from = "/api/verify-payment"
-  to = "/.netlify/functions/verify-payment"
+  from = "/*"
+  to = "/index.html"
   status = 200
-  force = true
-
-[[redirects]]
-  from = "/api/content"
-  to = "/.netlify/functions/content"
-  status = 200
-  force = true
