@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { Closing, FileCard, Group, Header, Text, Heading, Paragraph, Bullets, KeySentence, Facts } from './components';
+import { Closing, FileCard, Group, Text, Heading, Paragraph, Bullets, KeySentence, Facts } from './components';
 const Link = NavLink;
 import './base.css';
 import './style.css';
@@ -156,11 +156,14 @@ function About() {
 
 export function App() {
     return <FileCard>
-        <div className="site-identity">
+        <header className="site-identity">
             <img className="developer-mark" src={prajwalAvatar} alt="Pixel-art avatar of Prajwal holding a steaming mug" />
-            <div><Header title="Prajwal Shinde" fact="Backend engineering · Applied AI" /></div>
-        </div>
-        <p className="site-tagline">I like simple interfaces backed by careful engineering.</p>
+            <div className="identity-copy">
+                <h1>Prajwal Shinde</h1>
+                <p className="identity-role">Backend engineering · Applied AI</p>
+                <p className="site-tagline">I like simple interfaces backed by careful engineering.</p>
+            </div>
+        </header>
         <nav className="file-nav" aria-label="Site pages">
             <NavLink to="/" end>Home</NavLink>
             <NavLink to="/projects">Projects</NavLink>
